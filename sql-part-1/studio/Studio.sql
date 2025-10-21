@@ -1,6 +1,13 @@
-SELECT TOP 3
-    Authors,
+SELECT
+    title,
+    authors,
     average_rating
-FROM 
-    books
-ORDER BY Authors DESC, average_rating DESC;
+FROM
+    BooksDB.dbo.books
+WHERE
+    authors LIKE 'Brandon Sanderson%' OR
+    authors LIKE 'J.K. Rowling%' OR
+    authors LIKE 'Lane T. Dennis%'
+ORDER BY
+    authors ASC,
+    average_rating DESC;
