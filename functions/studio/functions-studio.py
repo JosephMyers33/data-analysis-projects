@@ -6,8 +6,21 @@
 # d) Use 'join' to create the reversed string and return that string from the function.
 # e) Create a variable of type string to test your new function. # f) Use 'print(reverse_characters(my_variable_name))'; to call the function and verify that it correctly reverses the characters in the string.
 # g) Use method chaining to reduce the lines of code within the function.
+def reverse_characters(input):
+    if input == str:
+        new_list = list(input)
+        new_list.reverse()
+        reverse_string = "".join(new_list)
+        return reverse_string
+    else:
+        input = str(input)
+        new_list = list(input)
+        new_list.reverse()
+        reverse_string = "".join(new_list)
+        return reverse_string
 
-
+my_variable_name = "Hello There"
+print(reverse_characters(my_variable_name))
 
 # 2) The 'split' method does not work on numbers, but we want the function to return a number with all the digits reversed (e.g. 1234 converts to 4321 and NOT the string "4321")
 # a) Add an if statement to your reverse_characters function to check the typeof the parameter.
@@ -27,3 +40,15 @@
 list_test1 = ['apple', 'potato', 'Capitalized Words']
 list_test2 = [123, 8897, 42, 1168, 8675309]
 list_test3 = ['hello', 'world', 123, 'orange']
+
+def reverse_list(original_list):
+    new_list = []
+    list_with_flipped_order = original_list[::-1]
+    for element in list_with_flipped_order:
+        reversed_element = reverse_characters(element)
+        new_list.append(reversed_element)
+    return new_list
+
+print(reverse_list(list_test1))
+print(reverse_list(list_test2))
+print(reverse_list(list_test3))
